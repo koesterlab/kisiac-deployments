@@ -1,41 +1,51 @@
-__variables__:
-  disk_groups:
-    wdc_hdds:
-      suffixes: ["2AEE", "EELE", "G5UE", "GX7E", "GZME", "NGLE", "R28E", "SAJE"]
-      crypt_prefix: hdd_WDC_WUH722020BL_STKE
-      device_prefix: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKE
-    samsung_ssds:
-      suffixes: ["116", "122"]
-      crypt_prefix: ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836
-      device_prefix: /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836
-
 encryption:
-  ?for group in disk_groups.values():
-    ?for suffix in group["suffixes"]:
-      - device: ?group['device_prefix'] + suffix
-        name: ?f"crypt_{crypt_prefix}{suffix}"
-        hash: sha512
-        cipher: aes-xts-plain64
-        key_size: 256
+  - hash: sha512
+    cipher: aes-xts-plain64
+    key_size: 256
+    mapping:
+      crypt_hdd_WDC_WUH722020BL_STKE2AEE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKE2AEE
+      crypt_hdd_WDC_WUH722020BL_STKEEELE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKEEELE
+      crypt_hdd_WDC_WUH722020BL_STKEG5UE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKEG5UE
+      crypt_hdd_WDC_WUH722020BL_STKEGX7E: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKEGX7E
+      crypt_hdd_WDC_WUH722020BL_STKEGZME: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKEGZME
+      crypt_hdd_WDC_WUH722020BL_STKENGLE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKENGLE
+      crypt_hdd_WDC_WUH722020BL_STKER28E: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKER28E
+      crypt_hdd_WDC_WUH722020BL_STKESAJE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKESAJE
+      crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836116: /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836116
+      crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836122: /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836122
+
 
 lvm:
   pvs:
-    ?for group in disk_groups.values():
-      ?for suffix in group["suffixes"]:
-        - ?f"/dev/mapper/crypt_{crypt_prefix}{suffix}"
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKE2AEE
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEEELE
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEG5UE
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEGX7E
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEGZME
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKENGLE
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKER28E
+    - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKESAJE
+    - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836116
+    - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836122
   vgs:
     vg_tmp:
       pvs:
-        ?for suffix in disk_groups["samsung_ssds"]["suffixes"]:
-          - ?f"/dev/mapper/crypt_{disk_groups['samsung_ssds']['crypt_prefix']}{suffix}"
+        - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836116
+        - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836122
       lvs:
         lv_tmp:
           size: rest
           layout: linear
     vg_workspace:
       pvs:
-        ?for suffix in disk_groups["wdc_hdds"]["suffixes"]:
-          - ?f"/dev/mapper/crypt_{disk_groups['wdc_hdds']['crypt_prefix']}{suffix}"
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKE2AEE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEEELE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEG5UE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEGX7E
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEGZME
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKENGLE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKER28E
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKESAJE
       lvs:
         lv_workspace:
           size: rest
