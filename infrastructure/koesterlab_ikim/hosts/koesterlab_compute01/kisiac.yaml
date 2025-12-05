@@ -1,0 +1,82 @@
+__variables__:
+  disk_groups:
+    wdc_hdds:
+      suffixes: ["2AEE", "EELE", "G5UE", "GX7E", "GZME", "NGLE", "R28E", "SAJE"]
+      crypt_prefix: hdd_WDC_WUH722020BL_STKE
+      device_prefix: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKE
+    samsung_ssds:
+      suffixes: ["116", "122"]
+      crypt_prefix: ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836
+      device_prefix: /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836
+
+encryption:
+  ?for group in disk_groups.values():
+    ?for suffix in group["suffixes"]:
+      - device: ?group['device_prefix'] + suffix
+        name: ?f"crypt_{crypt_prefix}{suffix}"
+        hash: sha512
+        cipher: aes-xts-plain64
+        key_size: 256
+
+lvm:
+  pvs:
+    ?for group in disk_groups.values():
+      ?for suffix in group["suffixes"]:
+        - ?f"/dev/mapper/crypt_{crypt_prefix}{suffix}"
+  vgs:
+    vg_tmp:
+      pvs:
+        ?for suffix in disk_groups["samsung_ssds"]["suffixes"]:
+          - ?f"/dev/mapper/crypt_{disk_groups['samsung_ssds']['crypt_prefix']}{suffix}"
+      lvs:
+        lv_tmp:
+          size: rest
+          layout: linear
+    vg_workspace:
+      pvs:
+        ?for suffix in disk_groups["wdc_hdds"]["suffixes"]:
+          - ?f"/dev/mapper/crypt_{disk_groups['wdc_hdds']['crypt_prefix']}{suffix}"
+      lvs:
+        lv_workspace:
+          size: rest
+          layout: raid5
+
+filesystems:
+  - device: /dev/disk/by-id/dm-uuid-LVM-1lww283aM1j6J7zJP4ch7I5v0lz2JPwBSLbvoO4SAjoCJcv5M2rr7TYIx8uo3YNa
+    type: ext4
+    mount: /
+    options: defaults
+    pass: 1
+  - device: /dev/disk/by-uuid/01fc0927-c5a9-435a-80e6-230139e4f1d2
+    type: ext4
+    mount: /boot
+    options: defaults
+    pass: 1
+  - device: /dev/disk/by-uuid/74E8-F2B2
+    type: vfat
+    mount: /boot/efi
+    options: defaults
+    pass: 1
+  - device: /dev/vg_tmp/lv_tmp
+    type: ext4
+    mount: /mnt/tmp
+    options: noauto
+    pass: 2
+  - device: /dev/vg_workspace/lv_workspace
+    type: ext4
+    mount: /mnt/workspace
+    options: noauto
+    pass: 2
+
+permissions:
+  /mnt/workspace:
+    user: jkoester
+    group: koesterlab
+    setgid: true
+    read: group
+    write: group
+  /mnt/tmp:
+    user: root
+    group: root
+    read: others
+    write: others
