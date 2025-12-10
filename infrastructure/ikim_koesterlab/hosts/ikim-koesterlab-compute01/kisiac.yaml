@@ -45,7 +45,15 @@ lvm:
     - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKASAJE
     - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836116
     - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836122
+    - /dev/nvme0n1p3
   vgs:
+    ubuntu-vg:
+      pvs:
+        - /dev/nvme0n1p3
+      lvs:
+        ubuntu-lv:
+          size: rest
+          layout: linear
     vg_tmp:
       pvs:
         - /dev/mapper/crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836116
