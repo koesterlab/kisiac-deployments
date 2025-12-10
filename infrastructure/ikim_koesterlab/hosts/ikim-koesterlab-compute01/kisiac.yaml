@@ -78,12 +78,12 @@ filesystems:
   - device: /dev/vg_tmp/lv_tmp
     type: ext4
     mount: /mnt/tmp
-    options: noauto
+    options: noauto,relatime
     pass: 2
   - device: /dev/vg_workspace/lv_workspace
     type: ext4
     mount: /mnt/workspace
-    options: noauto
+    options: noauto,relatime
     pass: 2
 
 permissions:
