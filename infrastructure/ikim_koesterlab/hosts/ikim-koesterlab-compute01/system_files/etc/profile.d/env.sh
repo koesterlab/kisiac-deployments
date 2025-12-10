@@ -1,4 +1,4 @@
-if getent group koesterlab | grep -qw "$USER"
+if groups | grep koesterlab
 then
     export TMPDIR=/mnt/tmp
 fi
