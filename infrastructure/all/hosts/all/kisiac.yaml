@@ -4,6 +4,9 @@ user_software:
   - pkg: snakemake
     with:
       - snakemake-storage-plugin-s3
+    channels:
+      - conda-forge
+      - bioconda
     desc: for running workflows
   - pkg: conda
     desc: only for snakemake internal use, use pixi instead
@@ -17,7 +20,7 @@ user_software:
   - pkg: starship
     desc: for a fancy shell prompt
     post_install: |
-      echo 'eval "\$(starship init bash)"' >> ~/.bashrc
+      echo 'eval "\$(starship init bash)\"' >> ~/.bashrc
   - pkg: ripgrep
     cmd: rg
     desc: for searching text (grep replacement)
