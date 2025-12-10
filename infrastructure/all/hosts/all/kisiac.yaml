@@ -31,11 +31,11 @@ user_software:
   - pkg: fzf
     desc: for fuzzy finding files
     post_install: |
-      echo 'eval "\$(fzf --bash)"' >> ~/.bashrc
+      echo 'eval \"\$(fzf --bash)\"' >> ~/.bashrc
   - pkg: zoxide
     desc: for quickly navigating the filesystem (cd replacement)
     post_install: |
-      echo 'eval "\$(zoxide init bash)"' >> ~/.bashrc
+      echo 'eval \"\$(zoxide init bash)\"' >> ~/.bashrc
   - pkg: nbterm
     with:
       - ipykernel
