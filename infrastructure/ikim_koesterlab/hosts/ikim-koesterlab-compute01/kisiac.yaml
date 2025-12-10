@@ -38,14 +38,14 @@ lvm:
           layout: linear
     vg_workspace:
       pvs:
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKE2AEE
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEEELE
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEG5UE
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEGX7E
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKEGZME
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKENGLE
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKER28E
-        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKESAJE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKA2AEE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKAEELE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKAG5UE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKAGX7E
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKAGZME
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKANGLE
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKAR28E
+        - /dev/mapper/crypt_hdd_WDC_WUH722020BL_STKASAJE
       lvs:
         lv_workspace:
           size: rest
