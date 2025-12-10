@@ -21,14 +21,14 @@ encryption:
     cipher: aes-xts-plain64
     key_size: 256
     mapping:
-      crypt_hdd_WDC_WUH722020BL_STKE2AEE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKA2AEE
-      crypt_hdd_WDC_WUH722020BL_STKEEELE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAEELE
-      crypt_hdd_WDC_WUH722020BL_STKEG5UE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAG5UE
-      crypt_hdd_WDC_WUH722020BL_STKEGX7E: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAGX7E
-      crypt_hdd_WDC_WUH722020BL_STKEGZME: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAGZME
-      crypt_hdd_WDC_WUH722020BL_STKENGLE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKANGLE
-      crypt_hdd_WDC_WUH722020BL_STKER28E: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAR28E
-      crypt_hdd_WDC_WUH722020BL_STKESAJE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKASAJE
+      crypt_hdd_WDC_WUH722020BL_STKA2AEE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKA2AEE
+      crypt_hdd_WDC_WUH722020BL_STKAEELE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAEELE
+      crypt_hdd_WDC_WUH722020BL_STKAG5UE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAG5UE
+      crypt_hdd_WDC_WUH722020BL_STKAGX7E: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAGX7E
+      crypt_hdd_WDC_WUH722020BL_STKAGZME: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAGZME
+      crypt_hdd_WDC_WUH722020BL_STKANGLE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKANGLE
+      crypt_hdd_WDC_WUH722020BL_STKAR28E: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAR28E
+      crypt_hdd_WDC_WUH722020BL_STKASAJE: /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKASAJE
       crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836116: /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836116
       crypt_ssd_SAMSUNG_MZQL27T6_S6CKNA0Y836122: /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836122
 
