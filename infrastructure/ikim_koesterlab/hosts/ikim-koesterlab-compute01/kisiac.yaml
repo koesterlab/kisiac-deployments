@@ -1,3 +1,20 @@
+partitions:
+  - type: primary
+    start: 1
+    end: -1
+    devices:
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKA2AEE
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAEELE
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAG5UE
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAGX7E
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAGZME
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKANGLE
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKAR28E
+      - /dev/disk/by-id/scsi-SATA_WDC_WUH722020BL_STKASAJE
+      - /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836116
+      - /dev/disk/by-id/scsi-SNVMe_SAMSUNG_MZQL27T6_S6CKNA0Y836122
+
+
 encryption:
   - hash: sha512
     cipher: aes-xts-plain64
