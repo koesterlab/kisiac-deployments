@@ -1,0 +1,9 @@
+software-deployment-method:
+  - conda
+cache: true
+default-resources: []
+conda-prefix: /mnt/tmp/snakemake
+resources:
+  mem_mb: 1000000
+#default-storage-provider: fs
+#local-storage-prefix: /mnt/tmp/snakemake/storage/$USER

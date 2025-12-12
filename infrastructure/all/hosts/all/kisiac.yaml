@@ -4,6 +4,7 @@ user_software:
   - pkg: snakemake
     with:
       - snakemake-storage-plugin-s3
+      - snakemake-storage-plugin-fs
     channels:
       - conda-forge
       - bioconda

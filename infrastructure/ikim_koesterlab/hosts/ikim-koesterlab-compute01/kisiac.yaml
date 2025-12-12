@@ -57,7 +57,9 @@ lvm:
       lvs:
         lv_workspace:
           size: rest
-          layout: raid5
+          layout: raid6
+          stripe_size: 32K
+          stripes: 6
 
 filesystems:
   - device: /dev/disk/by-id/dm-uuid-LVM-1lww283aM1j6J7zJP4ch7I5v0lz2JPwBSLbvoO4SAjoCJcv5M2rr7TYIx8uo3YNa
