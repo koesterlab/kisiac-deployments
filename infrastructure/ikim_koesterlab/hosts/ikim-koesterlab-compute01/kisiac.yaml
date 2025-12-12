@@ -58,7 +58,7 @@ lvm:
         lv_workspace:
           size: rest
           layout: raid6
-          stripe_size: 32256B
+          stripe_size: 32256B # small stripesize for good small file IO performance
           stripes: 6
 
 filesystems:
