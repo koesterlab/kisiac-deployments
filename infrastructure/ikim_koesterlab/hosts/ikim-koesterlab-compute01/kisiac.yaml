@@ -58,7 +58,7 @@ lvm:
         lv_workspace:
           size: rest
           layout: raid6
-          stripe_size: 32K
+          stripe_size: 32256B
           stripes: 6
 
 filesystems:
