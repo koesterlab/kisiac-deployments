@@ -100,3 +100,4 @@ permissions:
     group: koesterlab
     read: group
     write: group
+    setgid: true
