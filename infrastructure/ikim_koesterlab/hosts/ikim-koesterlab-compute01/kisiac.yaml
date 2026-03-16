@@ -96,7 +96,7 @@ permissions:
     read: group
     write: group
   /mnt/tmp:
-    user: root
-    group: root
-    read: others
-    write: others
+    user: jkoester
+    group: koesterlab
+    read: group
+    write: group
