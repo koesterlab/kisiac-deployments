@@ -1,0 +1,4 @@
+messages:
+  - >
+    As soon as possible, activate two-factor-authentication by running 'google-authenticator -t -d -f -r 3 -R 30 -w 3',
+    and register the shown QR code with your preferred 2FA app
