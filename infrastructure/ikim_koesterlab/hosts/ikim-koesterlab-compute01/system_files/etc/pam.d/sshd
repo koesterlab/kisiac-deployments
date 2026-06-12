@@ -1,7 +1,7 @@
 # PAM configuration for the Secure Shell service
 
-# Standard Un*x authentication.
-@include common-auth
+# DISABLED standard Un*x authentication. Change according to https://labs.iximiuz.com/tutorials/2fa-pkey-auth-linux-ssh-b1dcdb9a
+# @include common-auth
 
 # Disallow non-root logins when /etc/nologin exists.
 account    required     pam_nologin.so
@@ -11,7 +11,7 @@ account    required     pam_nologin.so
 # account  required     pam_access.so
 
 # Standard Un*x authorization.
-# @include common-account # disable normal password login via SSH
+@include common-account
 
 # SELinux needs to be the first session rule.  This ensures that any
 # lingering context has been cleared.  Without this it is possible that a
@@ -54,4 +54,5 @@ session [success=ok ignore=ignore module_unknown=ignore default=bad]        pam_
 # Standard Un*x password updating.
 @include common-password
 
+# Change according to https://labs.iximiuz.com/tutorials/2fa-pkey-auth-linux-ssh-b1dcdb9a
 auth required pam_google_authenticator.so nullok
