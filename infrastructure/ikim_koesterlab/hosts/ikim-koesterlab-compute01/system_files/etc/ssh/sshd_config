@@ -1,6 +1,12 @@
+# see https://labs.iximiuz.com/tutorials/2fa-pkey-auth-linux-ssh-b1dcdb9a
+
+PermitRootLogin no
 PasswordAuthentication no
-KbdInteractiveAuthentication no
+PubkeyAuthentication yes
+AuthenticationMethods publickey,keyboard-interactive
 UsePAM yes
+KbdInteractiveAuthentication yes
+
 X11Forwarding no
 AcceptEnv LANG LC_*
 Subsystem       sftp    /usr/lib/openssh/sftp-server
