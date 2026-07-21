@@ -6,5 +6,5 @@ conda-prefix: /mnt/tmp/snakemake
 resources:
   mem_mb: 1000000
 persistence-backend: db
-#default-storage-provider: fs
-#local-storage-prefix: /mnt/tmp/snakemake/storage/$USER
+default-storage-provider: fs
+local-storage-prefix: /mnt/tmp/snakemake/storage/$PWD
