@@ -53,6 +53,11 @@ zfs:
         compression: lz4
         encryption: aes-256-gcm
         atime: off
+        # We typically access large files randomly. By increasing the recordsize,
+        # we make such reads more linear, which makes ZFS much faster.
+        # Smaller files are typically read entirely or streamed, such that the
+        # recordsize has no influence. Going higher than 1M is not recommended.
+        recordsize: 1M
         ashift: 12 # physical sector size of hard disks is 4094 (smartctl -i)
         sync: disabled
 
