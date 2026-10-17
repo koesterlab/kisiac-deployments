@@ -1,0 +1,5 @@
+software:
+  - flatpak:discord
+  - flatpak:mattermost
+  - seafile
+  - flatpak:zoom
