@@ -1,0 +1,4 @@
+# Enable compose key https://docs.redhat.com/de/documentation/red_hat_enterprise_linux/7/html/desktop_migration_and_administration_guide/enable-compose-key
+[org/gnome/desktop/input-sources]
+# Set the left Ctrl key as the Compose key and enable it
+xkb-options=['compose:lctrl']

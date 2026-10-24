@@ -3,3 +3,10 @@ software:
   - flatpak:mattermost
   - seafile
   - flatpak:zoom
+  - direnv
+  - libsecret-tools
+  - flatpak:gimp
+  - flatpak:inkscape
+
+user_update_hooks:
+  - dconf update
