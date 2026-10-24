@@ -1,0 +1,5 @@
+Types: deb
+URIs: https://pkgs.k8s.io/core:/stable:/v1.37/deb/
+Suites: /
+Architectures: amd64,arm64,armhf
+Signed-By: /etc/apt/keyrings/kubernetes-apt-keyring.gpg

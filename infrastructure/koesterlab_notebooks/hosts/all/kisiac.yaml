@@ -1,3 +1,9 @@
+
+system_pre_update_hooks:
+  - sudo apt install gpg
+  - curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
+  - curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.37/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
 software:
   - flatpak:discord
   - flatpak:mattermost
@@ -7,6 +13,19 @@ software:
   - libsecret-tools
   - flatpak:gimp
   - flatpak:inkscape
+  - code
+  - kubectl
+  - direnv
+  - libsecret-tools # allow to store (in DE-managed keyring) and access secrets from CLI
 
 user_update_hooks:
-  - dconf update
+  - dconf update # to capture the compose key dconf setting via dconf.d
+  - code --install-extension tamasfe.even-better-toml
+  - code --install-extension snakemake.snakemake
+  - code --install-extension renan-r-santos.pixi-code
+  - code --install-extension github.vscode-pull-request-github
+  - code --install-extension github.vscode-github-actions
+  - code --install-extension tfehlmann.snakefmt
+  - code --install-extension ms-python.vscode-pylance
+  - code --install-extension ms-python.python
+  - code --install-extension ms-python.vscode-python-envs
