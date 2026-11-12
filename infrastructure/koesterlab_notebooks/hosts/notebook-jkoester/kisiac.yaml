@@ -2,6 +2,9 @@ users:
   johannes:
     managed: false # let the user be managed via the DE
 
+user_update_hooks:
+  - gnome-extensions disable zorin-printers@zorinos.com
+
 software:
   - flatpak:zotero
   - flatpak:obsidian
