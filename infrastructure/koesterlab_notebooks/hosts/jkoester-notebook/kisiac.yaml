@@ -5,3 +5,5 @@ users:
 software:
   - flatpak:zotero
   - flatpak:obsidian
+  - remove:evolution
+  - flatpak:thunderbird
