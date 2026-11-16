@@ -1,7 +1,0 @@
-users:
-  johannes:
-    managed: false # let the user be managed via the DE
-
-software:
-  - flatpak:zotero
-  - flatpak:obsidian
