@@ -30,6 +30,9 @@ Here is [Johannes' kisiac.yaml](infrastructure/koesterlab_notebooks/hosts/jkoest
 
 ```bash
 users:
+  # Put your desktop username as chosen during linux installation here, replacing "johannes".
+  # This is important for kisiac to know which user to setup with our default
+  # userspace tools (starship, exa, etc.).
   johannes:
     managed: false # let the user be managed via the DE
 
