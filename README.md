@@ -12,15 +12,11 @@ pixi global install kisiac
 To initialize deployment, run
 
 ```bash
-kisiac setup-config
-```
-
-and paste the following seed configuration after the prompt:
-
-```yaml
+kisiac --non-interactive setup-config << EOF
 repo: https://github.com/koesterlab/kisiac-deployments
 infrastructure: koesterlab_notebooks
 require_terminal_multiplexer: false
+EOF
 ```
 
 Then, run
