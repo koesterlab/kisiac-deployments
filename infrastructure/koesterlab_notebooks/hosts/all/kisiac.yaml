@@ -29,4 +29,3 @@ user_update_hooks:
   - code --install-extension ms-python.vscode-pylance
   - code --install-extension ms-python.python
   - code --install-extension ms-python.vscode-python-envs
-  - gnome-extensions disable zorin-printers@zorinos.com # the printer extension is buggy

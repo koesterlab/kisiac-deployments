@@ -7,3 +7,6 @@ software:
   - flatpak:obsidian
   - remove:evolution
   - flatpak:thunderbird
+
+user_update_hooks:
+  - gnome-extensions disable zorin-printers@zorinos.com # the printer extension is buggy
