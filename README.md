@@ -1,5 +1,12 @@
 # Koesterlab kisiac deployments
 
+First, install [pixi](https://pixi.sh). Second, install `kisiac` via
+
+```bash
+pixi global install kisiac
+```
+
+
 ## Notebooks
 
 To initialize deployment, run
